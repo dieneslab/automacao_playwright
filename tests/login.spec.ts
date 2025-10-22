@@ -11,4 +11,16 @@ test('the user login with success', async ({ page, baseURL }) => {
   const productTitle = page.locator('[data-test="title"]')
   await expect(productTitle).toHaveText('Products')
 
+})  
+
+test('the user inserts wrong credentials', async ({ page, baseURL }) => {
+  await page.goto('/')
+
+  await page.locator('[data-test="username"]').fill('standard_user')
+  await page.locator('[data-test="password"]').fill('wrong_pass')
+  await page.locator('[data-test="login-button"]').click()
+
+  const loginError = await page.getByText('Epic sadface: Username and password do not match any user in this service')
+  await expect(loginError).toBeVisible()  
+
 })

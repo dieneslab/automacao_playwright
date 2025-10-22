@@ -20,7 +20,7 @@ Os testes abrangem cenários de UI e API, com foco em desempenho, paralelismo e 
 ``` sh
 📦 automacao_playwright
 ├── 📂 tests                # Diretório principal dos testes
-│   ├── login.spec.ts        # Exemplo de teste de login
+│   ├── 📜 login.spec.ts    # Exemplo de teste de login
 ├── 📂 playwright-report    # Relatórios gerados após execução
 ├── 📂 test-results         # Resultados de execução dos testes
 ├── 📜 playwright.config.ts # Configuração do Playwright
