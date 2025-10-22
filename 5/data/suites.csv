@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Oct 22 23:08:22 GMT 2025","Wed Oct 22 23:08:24 GMT 2025","1781","chromium","login.spec.ts","","","","the user login with success",""
+"passed","Wed Oct 22 23:08:25 GMT 2025","Wed Oct 22 23:08:27 GMT 2025","1518","chromium","login.spec.ts","","","","the user inserts wrong credentials",""
+"passed","Wed Oct 22 23:08:27 GMT 2025","Wed Oct 22 23:08:28 GMT 2025","1617","chromium","products.spec.ts","","","","validate prefix products name",""
