@@ -35,12 +35,12 @@ export default defineConfig({
           os_platform: os.platform( ),
           os_release: os.release(),
           os_version: os.version(),
-          node_version: process.version,
+          node_version: `${process.version}\n`
           // browser: 'chromium',
           // playwright_version: require('@playwright/test/package.json').version,
-        },
-      },
-    ],
+        }
+      }
+    ]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
