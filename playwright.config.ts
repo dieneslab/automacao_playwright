@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'
 import * as os from 'node:os'
 declare const process: any
+delete process.env.URL
 
 /**
  * Read environment variables from file.
