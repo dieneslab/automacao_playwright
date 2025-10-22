@@ -19,13 +19,15 @@ Os testes abrangem cenários de UI e API, com foco em desempenho, paralelismo e 
 
 ``` sh
 📦 automacao_playwright
-├── 📂 tests                # Diretório principal dos testes
-│   ├── 📜 login.spec.ts    # Exemplo de teste de login
+├── 📂 allure-results       # Relatórios gerados Allure
 ├── 📂 playwright-report    # Relatórios gerados após execução
 ├── 📂 test-results         # Resultados de execução dos testes
-├── 📜 playwright.config.ts # Configuração do Playwright
+├── 📂 tests                # Diretório principal dos testes
+│   ├── 📜 login.spec.ts    # Exemplo de teste de login
 ├── 📜 package.json         # Dependências e scripts de execução
+├── 📜 playwright.config.ts # Configuração do Playwright
 └── 📜 README.md            # Documentação do projeto
+└── 📜 tsconfig.json        # Configuração TypeScript
 ```
 
 ## 🚀 Como Executar os Testes
@@ -52,34 +54,10 @@ npm i -D typescript
 npm init playwright@latest
 ```
 
-### ▶️ Executar Testes no Modo Headless (padrão)
+### ▶️ Executar Testes
 
 ``` sh
 npm run test
-```
-
-### 🧭 Executar Testes com Interface Gráfica (headed)
-
-``` sh
-npm run test:headed
-```
-
-### 🪄 Modo Debug
-
-``` sh
-npm run test:debug
-```
-
-### 📱 Gravar Fluxos Interativos (Codegen)
-
-``` sh
-npm run codegen
-```
-
-Ou para simular dispositivos móveis:
-
-``` sh
-npm run codegen:mobile
 ```
 
 ## 🧾 Relatórios
@@ -92,6 +70,18 @@ npx playwright show-report
 ```
 
 Os relatórios são salvos por padrão em `playwright-report/`.
+
+Também há possibilidade de gerar relatórios com Allure Report.
+Para visualizar:
+
+``` sh
+npx allure serve allure-results
+```
+
+O relatório inclui gráficos, métricas e histórico de execuções.  
+Ele pode ser consultado pelo [**LINK**](https://dieneslab.github.io/automacao_playwright/).
+
+---
 
 ## ⚡ Execução Automática via GitHub Actions
 
