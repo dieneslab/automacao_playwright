@@ -1,7 +1,6 @@
 import { defineConfig, devices } from '@playwright/test'
 import * as os from 'node:os'
 declare const process: any
-delete process.env.URL
 
 /**
  * Read environment variables from file.
@@ -15,7 +14,7 @@ delete process.env.URL
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  //testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -48,7 +47,7 @@ export default defineConfig({
     /* Open browsers to see executions */
     headless: process.env.CI ? true : false,
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'https://www.saucedemo.com',
+    /* baseURL: 'https://www.saucedemo.com', */ // Moved to each project
     /* Reduce screen interation velocity */
     launchOptions: {
       slowMo: 300
@@ -63,9 +62,26 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'ui-tests',
+      testDir: './tests',
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.saucedemo.com', // UI BaseURL 
+      },
+      testMatch: '**/*.spec.ts',
     },
+    {
+      name: 'api-tests',
+      testDir: './api/tests',
+      use: {
+        baseURL: 'https://restful-booker.herokuapp.com', // API BaseURL
+        // Extra configuration for API tests
+        extraHTTPHeaders: {
+          'Accept': 'application/json',
+        },
+      },
+      testMatch: '**/*.spec.ts',
+    }  
     /*{
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
