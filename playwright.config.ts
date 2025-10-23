@@ -36,7 +36,7 @@ export default defineConfig({
           os_release: os.release(),
           os_version: os.version(),
           node_version: process.version,
-          dummy_separator: "",
+          report: "", // just to make sure each info appears in a new line
           // browser: 'chromium',
           // playwright_version: require('@playwright/test/package.json').version,
         }
